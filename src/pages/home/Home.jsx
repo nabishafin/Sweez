@@ -3,6 +3,9 @@ import Banner from '../../components/ui/Banner';
 import WhatWeDo from '../../components/ui/WhatWeDo';
 import OurServices from '../../components/ui/OurServices';
 import OurClients from '../../components/ui/OurClients';
+import TechStacks from '../../components/ui/TechStacks';
+import PartnerSection from '../../components/ui/PartnerSection';
+import ContactSection from '../../components/ui/ContactSection';
 
 const Home = () => {
     return (
@@ -11,6 +14,9 @@ const Home = () => {
             <WhatWeDo />
             <OurServices />
             <OurClients />
+            {/* <TechStacks />  jodi Add korar proyjon lage */}
+            <PartnerSection />
+            <ContactSection />
         </div>
     );
 };

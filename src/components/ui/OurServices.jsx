@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 
 const OurServices = () => {
     // Services data
-    // Data for "What We Do" section
     const services = [
         {
             icon: "💻", // Replace with your icon or image
@@ -53,11 +52,11 @@ const OurServices = () => {
     ];
 
     return (
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-gray-50 dark:bg-gray-800">
             <div className="container mx-auto px-4">
                 {/* Section Heading */}
                 <motion.h2
-                    className="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-12"
+                    className="text-4xl md:text-5xl font-bold text-center text-gray-900 dark:text-white mb-12"
                     initial={{ opacity: 0, y: -50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
@@ -70,7 +69,7 @@ const OurServices = () => {
                     {services.map((service, index) => (
                         <motion.div
                             key={index}
-                            className="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow"
+                            className="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow"
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: index * 0.2 }}
@@ -79,12 +78,12 @@ const OurServices = () => {
                             <div className="text-6xl mb-4">{service.icon}</div>
 
                             {/* Title */}
-                            <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+                            <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
                                 {service.title}
                             </h3>
 
                             {/* Description */}
-                            <p className="text-gray-600">{service.description}</p>
+                            <p className="text-gray-600 dark:text-gray-300">{service.description}</p>
                         </motion.div>
                     ))}
                 </div>
@@ -92,4 +91,5 @@ const OurServices = () => {
         </section>
     );
 };
+
 export default OurServices;
