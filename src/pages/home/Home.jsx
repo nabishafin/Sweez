@@ -7,6 +7,7 @@ import TechStacks from '../../components/ui/TechStacks';
 import PartnerSection from '../../components/ui/PartnerSection';
 import ContactSection from '../../components/ui/ContactSection';
 import StatsSection from '../../components/ui/StatsSection';
+import FaqSection from '../../components/ui/FaqSection';
 
 const Home = () => {
     return (
@@ -19,6 +20,7 @@ const Home = () => {
             {/* <TechStacks />  jodi Add korar proyjon lage */}
             <PartnerSection />
             <ContactSection />
+            <FaqSection />
         </div>
     );
 };
