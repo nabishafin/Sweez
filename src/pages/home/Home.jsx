@@ -6,11 +6,13 @@ import OurClients from '../../components/ui/OurClients';
 import TechStacks from '../../components/ui/TechStacks';
 import PartnerSection from '../../components/ui/PartnerSection';
 import ContactSection from '../../components/ui/ContactSection';
+import StatsSection from '../../components/ui/StatsSection';
 
 const Home = () => {
     return (
         <div>
             <Banner />
+            <StatsSection />
             <WhatWeDo />
             <OurServices />
             <OurClients />

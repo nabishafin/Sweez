@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
 import { NavLink } from "react-router-dom";
+import { FaArrowDown } from "react-icons/fa6";
 
 const Navbar = () => {
     const [darkMode, setDarkMode] = useState(false);
@@ -24,6 +25,69 @@ const Navbar = () => {
                     Home
                 </NavLink>
             </li>
+
+            <li>
+                <NavLink
+                    to="/about"
+                    className={({ isActive }) =>
+                        isActive
+                            ? "text-blue-500 dark:text-blue-300"
+                            : "hover:text-blue-500 dark:hover:text-blue-300"
+                    }
+                >
+                    About Us
+                </NavLink>
+            </li>
+            {/* Dropdown Menu */}
+            <li className="dropdown dropdown-hover">
+                <label
+                    tabIndex={0}
+                    className="hover:text-blue-500 dark:hover:text-blue-300"
+                >
+                    Services<FaArrowDown />
+                </label>
+                <ul
+                    tabIndex={0}
+                    className="dropdown-content menu p-2 shadow bg-base-100 dark:bg-gray-700 rounded-box w-52"
+                >
+                    <li>
+                        <NavLink
+                            to="/services/web-development"
+                            className={({ isActive }) =>
+                                isActive
+                                    ? "text-blue-500 dark:text-blue-300"
+                                    : "hover:text-blue-500 dark:hover:text-blue-300"
+                            }
+                        >
+                            Web Development
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink
+                            to="/services/mobileapp"
+                            className={({ isActive }) =>
+                                isActive
+                                    ? "text-blue-500 dark:text-blue-300"
+                                    : "hover:text-blue-500 dark:hover:text-blue-300"
+                            }
+                        >
+                            Mobile Apps
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink
+                            to="/services/ai-solutions"
+                            className={({ isActive }) =>
+                                isActive
+                                    ? "text-blue-500 dark:text-blue-300"
+                                    : "hover:text-blue-500 dark:hover:text-blue-300"
+                            }
+                        >
+                            AI Solutions
+                        </NavLink>
+                    </li>
+                </ul>
+            </li>
             <li>
                 <NavLink
                     to="/terms"
@@ -33,7 +97,7 @@ const Navbar = () => {
                             : "hover:text-blue-500 dark:hover:text-blue-300"
                     }
                 >
-                    Terms and Policy
+                    Blog
                 </NavLink>
             </li>
             <li>
@@ -48,6 +112,8 @@ const Navbar = () => {
                     Contact
                 </NavLink>
             </li>
+
+
         </>
     );
 
@@ -108,4 +174,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default Navbar; 
