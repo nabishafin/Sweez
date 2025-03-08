@@ -13,9 +13,9 @@ const Home = () => {
     return (
         <div>
             <Banner />
-            <StatsSection />
             <WhatWeDo />
             <OurServices />
+            <StatsSection />
             <OurClients />
             {/* <TechStacks />  jodi Add korar proyjon lage */}
             <PartnerSection />

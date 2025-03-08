@@ -1,82 +1,58 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React from 'react';
+import { motion } from 'framer-motion';
+import Button from '../shared/Button';
 
 const WhatWeDo = () => {
     return (
-        <section className="py-16 bg-gray-50 dark:bg-gray-800">
-            <div className="container mx-auto px-4">
-                {/* Section Heading */}
-                <motion.h2
-                    className="text-4xl md:text-5xl font-bold text-center text-gray-900 dark:text-white mb-8"
-                    initial={{ opacity: 0, y: -50 }}
+        <section className="what-we-do py-20"> {/* Added padding */}
+            <div className="container mx-auto px-4"> {/* Added container and padding */}
+                <motion.div
+                    className="flex flex-col md:flex-row items-center" // Responsive flex direction
+                    initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
                 >
-                    What We Do
-                </motion.h2>
+                    {/* Image Side */}
+                    <motion.div
+                        className="md:w-1/2 mb-8 md:mb-0 relative" // Responsive width
+                        whileHover={{ scale: 1.05 }}
+                    >
+                        <img
+                            src="https://i.ibb.co.com/FZK6Ww1/company-img.jpg"
+                            alt="Company Image"
+                            className="w-full"
+                        />
+                        <motion.div
+                            className="experience-badge absolute bottom-4 left-4 bg-red-500 text-white py-2 px-4 rotate-[-5deg]"
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.5, duration: 0.5 }}
+                        >
+                            20 Years of Experience
+                        </motion.div>
+                    </motion.div>
 
-                {/* Mission and Expertise Description */}
-                <motion.div
-                    className="max-w-3xl mx-auto text-center mb-12"
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                >
-                    <p className="text-lg text-gray-600 dark:text-gray-300">
-                        At <span className="font-semibold text-blue-600">Our Company</span>, we are dedicated to transforming ideas into reality. With a team of experts in software development, mobile apps, web design, AI automation, and digital marketing, we deliver cutting-edge solutions that drive growth and innovation for businesses worldwide.
-                    </p>
+                    {/* Text Side */}
+                    <motion.div className="md:w-1/2 md:pl-8"> {/* Responsive width and padding */}
+                        <h2 className="text-3xl font-bold mb-4">What We Do</h2> {/* Adjusted heading size */}
+                        <p className="mb-6">
+                            UI design files free download from freewebpad. We provide these
+                            elements free of charge for all purposes.
+                        </p>
+                        <div className="mission_vision">
+                            <p className='mb-2'>Mission : freewebpad...This is what we are and this is what we do. We provide web solution Elements...</p>
+                            <p>Vision : freewebpad...This is what we are and this is what we do. We provide web solution Elements...</p>
+                        </div>
+                        <motion.button
+                            className="px-6 py-2 bg-white/10 dark:bg-gray-700/10 backdrop-blur-md border-2 border-white/20 dark:border-gray-700/20 text-purple-500 dark:text-purple-400 rounded-full hover:bg-gradient-to-r from-purple-500/20 to-pink-500/20 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl"
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
+                        >
+                            Learn More
+                        </motion.button>
+                    </motion.div>
                 </motion.div>
-
-                {/* Expertise Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {/* Card 1: Software Development */}
-                    <motion.div
-                        className="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow"
-                        initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
-                    >
-                        <div className="text-6xl mb-4">💻</div>
-                        <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
-                            Software Development
-                        </h3>
-                        <p className="text-gray-600 dark:text-gray-300">
-                            We build robust and scalable software solutions tailored to your business needs.
-                        </p>
-                    </motion.div>
-
-                    {/* Card 2: Mobile App Development */}
-                    <motion.div
-                        className="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow"
-                        initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.6 }}
-                    >
-                        <div className="text-6xl mb-4">📱</div>
-                        <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
-                            Mobile App Development
-                        </h3>
-                        <p className="text-gray-600 dark:text-gray-300">
-                            Crafting intuitive and high-performance mobile applications for iOS and Android.
-                        </p>
-                    </motion.div>
-
-                    {/* Card 3: Web Design & Development */}
-                    <motion.div
-                        className="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow"
-                        initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.8 }}
-                    >
-                        <div className="text-6xl mb-4">🌐</div>
-                        <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
-                            Web Design & Development
-                        </h3>
-                        <p className="text-gray-600 dark:text-gray-300">
-                            Designing and developing responsive, user-friendly websites that drive engagement.
-                        </p>
-                    </motion.div>
-                </div>
             </div>
         </section>
     );

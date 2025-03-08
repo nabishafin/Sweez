@@ -7,19 +7,20 @@ import { motion, AnimatePresence } from "framer-motion";
 const Navbar = () => {
     const [darkMode, setDarkMode] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false); // Mobile menu state
 
-    // থিম টগল ফাংশন
+    // Toggle theme function
     const toggleTheme = () => {
         setDarkMode(!darkMode);
         document.documentElement.classList.toggle("dark");
     };
 
-    // ড্রপডাউন মেনু খোলা/বন্ধ করার ফাংশন
+    // Dropdown menu handler
     const handleDropdown = (isOpen) => {
         setIsDropdownOpen(isOpen);
     };
 
-    // ন্যাভবার লিংকগুলি
+    // Navbar links
     const links = (
         <>
             <li>
@@ -27,8 +28,8 @@ const Navbar = () => {
                     to="/"
                     className={({ isActive }) =>
                         isActive
-                            ? "text-blue-500 dark:text-blue-300 font-semibold"
-                            : "hover:text-blue-500 dark:hover:text-blue-300"
+                            ? "text-blue-500 dark:text-blue-300 font-bold text-lg"
+                            : "hover:text-blue-500 dark:hover:text-blue-300 font-bold text-lg"
                     }
                 >
                     Home
@@ -40,15 +41,15 @@ const Navbar = () => {
                     to="/about"
                     className={({ isActive }) =>
                         isActive
-                            ? "text-blue-500 dark:text-blue-300 font-semibold"
-                            : "hover:text-blue-500 dark:hover:text-blue-300"
+                            ? "text-blue-500 dark:text-blue-300 font-bold text-lg"
+                            : "hover:text-blue-500 dark:hover:text-blue-300 font-bold text-lg"
                     }
                 >
                     About Us
                 </NavLink>
             </li>
 
-            {/* ড্রপডাউন মেনু */}
+            {/* Dropdown Menu */}
             <li
                 className="dropdown dropdown-hover"
                 onMouseEnter={() => handleDropdown(true)}
@@ -56,9 +57,9 @@ const Navbar = () => {
             >
                 <label
                     tabIndex={0}
-                    className="hover:text-blue-500 dark:hover:text-blue-300 flex items-center gap-1 cursor-pointer"
+                    className="hover:text-blue-500 dark:hover:text-blue-300 flex items-center gap-1 cursor-pointer font-bold text-lg"
                 >
-                    Services <FaArrowDown className="text-sm" />
+                    Services <FaArrowDown size={15} className="text-xl mt-1" />
                 </label>
                 <AnimatePresence>
                     {isDropdownOpen && (
@@ -115,8 +116,8 @@ const Navbar = () => {
                     to="/blog"
                     className={({ isActive }) =>
                         isActive
-                            ? "text-blue-500 dark:text-blue-300 font-semibold"
-                            : "hover:text-blue-500 dark:hover:text-blue-300"
+                            ? "text-blue-500 dark:text-blue-300 font-bold text-lg"
+                            : "hover:text-blue-500 dark:hover:text-blue-300 font-bold text-lg"
                     }
                 >
                     Blog
@@ -128,8 +129,8 @@ const Navbar = () => {
                     to="/contact"
                     className={({ isActive }) =>
                         isActive
-                            ? "text-blue-500 dark:text-blue-300 font-semibold"
-                            : "hover:text-blue-500 dark:hover:text-blue-300"
+                            ? "text-blue-500 dark:text-blue-300 font-semibold text-lg"
+                            : "hover:text-blue-500 dark:hover:text-blue-300 font-bold text-lg"
                     }
                 >
                     Contact
@@ -139,11 +140,16 @@ const Navbar = () => {
     );
 
     return (
-        <div className="navbar bg-base-100 shadow-sm dark:bg-gray-800 dark:text-white">
-            {/* মোবাইল মেনু */}
+        <div className="navbar bg-base-100 shadow-sm dark:bg-black dark:text-white sticky top-0 z-50">
+            {/* Mobile menu */}
             <div className="navbar-start">
                 <div className="dropdown">
-                    <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                    <div
+                        tabIndex={0}
+                        role="button"
+                        className="btn btn-ghost lg:hidden"
+                        onClick={() => setIsMenuOpen(!isMenuOpen)} // Toggle mobile menu
+                    >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-5 w-5"
@@ -159,37 +165,62 @@ const Navbar = () => {
                             />
                         </svg>
                     </div>
-                    <ul
-                        tabIndex={0}
-                        className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 dark:bg-gray-700 rounded-box w-52"
-                    >
-                        {links}
-                    </ul>
+                    {isMenuOpen && (
+                        <ul
+                            tabIndex={0}
+                            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 dark:bg-gray-700 rounded-box w-52"
+                        >
+                            {links}
+                        </ul>
+                    )}
                 </div>
 
-                {/* ব্র্যান্ড লোগো */}
-                <NavLink to="/" className="btn btn-ghost text-xl dark:text-white">
-                    Sweez
+                {/* Brand Logo */}
+                <NavLink to="/" className="btn btn-ghost text-3xl dark:text-white">
+                    <img className="w-32" src="https://sweez.xyz/image/Logo/sweez_2000.png" alt="" />
                 </NavLink>
             </div>
 
-            {/* ডেস্কটপ মেনু */}
+            {/* Desktop menu */}
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">{links}</ul>
             </div>
 
-            {/* থিম টগল বাটন */}
-            <div className="navbar-end">
-                <button
-                    onClick={toggleTheme}
-                    className="p-2 hover:text-gray-300 dark:hover:text-gray-400"
-                >
-                    {darkMode ? (
-                        <SunIcon className="h-6 w-6 text-orange-400" />
-                    ) : (
-                        <MoonIcon className="h-6 w-6 text-blue-950 dark:text-blue-300" />
-                    )}
-                </button>
+            {/* Theme toggle button */}
+            <div className="navbar-end flex gap-4 items-center">
+                <div className="pl-3 md:pl-0">
+                    <button
+                        onClick={toggleTheme}
+                        className="p-2 hover:text-gray-300 dark:hover:text-gray-400"
+                    >
+                        {darkMode ? (
+                            <SunIcon className="h-12 w-12 text-orange-400" />
+                        ) : (
+                            <MoonIcon className="h-10 w-10 text-blue-950 dark:text-blue-300" />
+                        )}
+                    </button>
+                </div>
+                <div className="hidden md:block mt-1">
+                    <motion.div
+                        className="relative inline-flex items-center justify-center p-1 mb-2 mr-2 overflow-hidden text-lg font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"
+                        style={{
+                            background: "linear-gradient(90deg, #9333ea, #3b82f6, #9333ea)", // Initial gradient
+                            backgroundSize: "200% 200%", // For smooth animation
+                        }}
+                        animate={{
+                            backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"], // Rotate gradient
+                        }}
+                        transition={{
+                            duration: 3, // Animation duration
+                            repeat: Infinity, // Infinite loop
+                            ease: "linear", // Smooth animation
+                        }}
+                    >
+                        <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                            Schedule a Call
+                        </span>
+                    </motion.div>
+                </div>
             </div>
         </div>
     );

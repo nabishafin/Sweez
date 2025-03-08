@@ -1,85 +1,191 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { FaReact, FaJs, FaHtml5, FaPython, FaLaravel, FaMobileAlt, FaPaintBrush, FaServer, FaChartLine } from "react-icons/fa"; // Importing icons from Font Awesome
+import Button from "../shared/Button";
+
+const icons = [
+    { icon: <FaReact size={60} color="#61DAFB" />, alt: "React" }, // Larger size and custom color
+    { icon: <FaJs size={60} color="#F7DF1E" />, alt: "JavaScript" },
+    { icon: <FaHtml5 size={60} color="#E34F26" />, alt: "HTML5" },
+    { icon: <FaPython size={60} color="#3776AB" />, alt: "Python" },
+    { icon: <FaLaravel size={60} color="#FF2D20" />, alt: "Laravel" },
+    { icon: <FaMobileAlt size={60} color="#4CAF50" />, alt: "Mobile App Development" }, // Mobile App
+    { icon: <FaPaintBrush size={60} color="#9C27B0" />, alt: "Graphics Design" }, // Graphics Design
+    { icon: <FaServer size={60} color="#607D8B" />, alt: "Digital Services" }, // Digital Services
+    { icon: <FaChartLine size={60} color="#FF9800" />, alt: "Data Analytics" }, // Data Analytics
+];
 
 const Banner = () => {
+    const [darkMode, setDarkMode] = useState(false);
+
+    const toggleDarkMode = () => {
+        setDarkMode(!darkMode);
+        document.documentElement.classList.toggle("dark"); // Toggle dark mode class on the root element
+    };
+
     return (
-        <div className="relative h-[700px] flex items-center justify-center bg-gradient-to-r from-[#121324] to-[#03041a] dark:from-[#1a1a2e] dark:to-[#00000f] overflow-hidden">
-            {/* Background Image with Overlay */}
-            <div
-                className="absolute inset-0 bg-cover bg-center opacity-30"
-                style={{ backgroundImage: `url("/src/assets/bgbanner.png")` }}
-            />
+        <div className={`relative h-[700px] flex items-center justify-center bg-gradient-to-r from-[#a9ccef] via-[#e9ecef] to-[#a9ccef] dark:from-[#1a202c] dark:via-[#2d3748] dark:to-[#1a202c] overflow-hidden`}>
+            {/* Dark Mode Toggle Button */}
+            <button
+                onClick={toggleDarkMode}
+                className="absolute top-4 right-4 p-2 bg-gray-200 dark:bg-gray-700 rounded-full shadow-lg z-50"
+            >
+                {darkMode ? "🌙" : "☀️"}
+            </button>
 
-            {/* External Image (Add this if you want an external image) */}
-            <img
-                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                alt="External Background"
-                className="absolute inset-0 w-full h-full object-cover opacity-20 dark:opacity-30"
-            />
-
-            {/* Background Animation */}
+            {/* Background Image with Infinite Animation */}
             <motion.div
-                className="absolute inset-0 bg-black opacity-40 dark:opacity-50"
-                initial={{ scale: 1.2 }}
-                animate={{ scale: 1 }}
-                transition={{ duration: 2, ease: "easeOut" }}
+                className="absolute inset-0 bg-cover bg-center opacity-20 dark:opacity-10" // Adjust opacity for dark mode
+                style={{ backgroundImage: `url("https://example.com/your-background-image.jpg")` }} // Add your background image URL here
+                initial={{ x: 0, y: 0 }}
+                animate={{ x: [0, 10, 0], y: [0, 10, 0] }}
+                transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
             />
 
-            {/* Content */}
-            <div className="text-center z-10">
-                <motion.h1
-                    className="text-5xl md:text-7xl font-bold text-white mb-4"
-                    initial={{ opacity: 0, y: -50 }}
-                    animate={{ opacity: 1, y: 0 }}
+            {/* Pulsating Background Overlay */}
+            <motion.div
+                className="absolute inset-0 bg-white/30 backdrop-blur-sm dark:bg-black/30" // Dark mode background overlay
+                initial={{ opacity: 0.6 }}
+                animate={{ opacity: 0.8 }}
+                transition={{ duration: 2, repeat: Infinity, repeatType: "mirror", ease: "easeInOut" }}
+            />
+
+            {/* Content Container */}
+            <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between">
+                {/* Left Side: Text Content */}
+                <div className="text-center lg:text-left z-10 max-w-lg lg:max-w-xl">
+                    {/* Breathing Text Animation with Gradient */}
+                    <motion.h1
+                        className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent mb-4 font-sans dark:from-blue-400 dark:to-purple-400"
+                        initial={{ opacity: 0, y: -50 }}
+                        animate={{ opacity: 1, y: 0, scale: 1.05 }}
+                        transition={{ duration: 3, delay: 0.5, repeat: Infinity, repeatType: "mirror", ease: "easeInOut" }}
+                    >
+                        Empowering Your Business
+                    </motion.h1>
+
+                    {/* Additional Content */}
+                    <motion.p
+                        className="text-lg md:text-xl text-gray-600 mb-8 font-sans dark:text-gray-300"
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1, delay: 1 }}
+                    >
+                        While We Take Care of Your Mobile App
+                    </motion.p>
+
+                    {/* Button with Hover Animation */}
+                    <Button
+                        text={'Lets Talk'}
+                        className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out transform hover:scale-105 shadow-lg hover:shadow-xl"
+                    ></Button>
+
+                    {/* Additional Content (Example: Numbers and Text) */}
+                    <div className="mt-10 flex flex-wrap justify-center lg:justify-start space-x-4 lg:space-x-8">
+                        <motion.div
+                            className="text-gray-900 mb-4 lg:mb-0 dark:text-gray-100"
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1, delay: 2 }}
+                        >
+                            <p className="text-2xl font-bold">16+</p>
+                            <p className="text-sm">Years</p>
+                        </motion.div>
+                        <motion.div
+                            className="text-gray-900 mb-4 lg:mb-0 dark:text-gray-100"
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1, delay: 2.2 }}
+                        >
+                            <p className="text-2xl font-bold">12+</p>
+                            <p className="text-sm">Countries</p>
+                        </motion.div>
+                        <motion.div
+                            className="text-gray-900 mb-4 lg:mb-0 dark:text-gray-100"
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1, delay: 2.4 }}
+                        >
+                            <p className="text-2xl font-bold">180+</p>
+                            <p className="text-sm">Professionals</p>
+                        </motion.div>
+                        <motion.div
+                            className="text-gray-900 mb-4 lg:mb-0 dark:text-gray-100"
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1, delay: 2.6 }}
+                        >
+                            <p className="text-2xl font-bold">114+</p>
+                            <p className="text-sm">Projects</p>
+                        </motion.div>
+                    </div>
+                </div>
+
+                {/* Right Side: Image with Motion */}
+                <motion.div
+                    className="relative z-10 w-full lg:w-1/2 flex justify-center lg:justify-end mt-8 lg:mt-0"
+                    initial={{ opacity: 0, x: 50 }}
+                    animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 1, delay: 0.5 }}
                 >
-                    Transforming Ideas into Reality
-                </motion.h1>
-
-                <motion.p
-                    className="text-lg md:text-xl text-gray-200 mb-8"
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1, delay: 1 }}
-                >
-                    We deliver cutting-edge solutions for your digital needs.
-                </motion.p>
-
-                <motion.button
-                    className="bg-white text-blue-800 px-8 py-3 rounded-full font-semibold hover:bg-blue-100 transition-all dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 1, delay: 1.5 }}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                >
-                    Explore Our Services
-                </motion.button>
+                    <motion.img
+                        src="https://i.ibb.co.com/v4NZLH71/pic-bg.jpg" // Add your side image URL here
+                        alt="Side Image"
+                        className="w-full max-w-2xl rounded-lg"
+                        initial={{ y: 0, scale: 1 }}
+                        animate={{ y: [0, -20, 0], scale: [1, 1.05, 1] }}
+                        transition={{
+                            duration: 4,
+                            repeat: Infinity,
+                            repeatType: "mirror",
+                            ease: "easeInOut",
+                        }}
+                    />
+                </motion.div>
             </div>
 
-            {/* Additional Content (Example: A small image or icon) */}
-            <motion.img
-                src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
-                alt="Additional Icon"
-                className="absolute bottom-10 right-10 w-16 h-16"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1, delay: 2 }}
-                whileHover={{ scale: 1.2 }}
-            />
+            {/* Floating Icons with Infinite Animation */}
+            {
+                icons.map((icon, index) => (
+                    <motion.div
+                        key={index}
+                        className="absolute w-16 h-16 opacity-30 hover:opacity-100 transition-opacity duration-300 dark:opacity-20 dark:hover:opacity-100" // Dark mode opacity
+                        style={{
+                            top: `${Math.random() * 80 + 10}%`,
+                            left: `${Math.random() * 80 + 10}%`,
+                        }}
+                        initial={{ y: 0, rotate: 0 }}
+                        animate={{ y: [0, -20, 0], rotate: [0, 360] }}
+                        transition={{
+                            duration: Math.random() * 4 + 3,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                            delay: Math.random() * 2,
+                        }}
+                    >
+                        {icon.icon}
+                    </motion.div>
+                ))
+            }
 
-            {/* Floating Icons Animation */}
+            {/* Additional Floating Circles (Optional) */}
             <motion.div
-                className="absolute top-20 left-20 w-16 h-16 bg-white rounded-full opacity-10 dark:bg-gray-700"
+                className="absolute top-20 left-20 w-12 h-12 bg-blue-500 rounded-full opacity-10 dark:opacity-20" // Dark mode opacity
                 initial={{ y: 0 }}
                 animate={{ y: [0, -20, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             />
             <motion.div
-                className="absolute bottom-20 right-20 w-12 h-12 bg-white rounded-full opacity-10 dark:bg-gray-700"
+                className="absolute bottom-20 right-20 w-10 h-10 bg-purple-500 rounded-full opacity-10 dark:opacity-20" // Dark mode opacity
                 initial={{ y: 0 }}
                 animate={{ y: [0, -20, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            />
+            <motion.div
+                className="absolute top-40 right-10 w-8 h-8 bg-yellow-500 rounded-full opacity-10 dark:opacity-20" // Dark mode opacity
+                initial={{ y: 0 }}
+                animate={{ y: [0, -20, 0] }}
+                transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
             />
         </div>
     );
