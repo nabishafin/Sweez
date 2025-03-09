@@ -17,10 +17,10 @@ const icons = [
 
 const Banner = () => {
     return (
-        <div className="relative h-[700px] flex items-center justify-center bg-gradient-to-r from-[#a9ccef] via-[#e9ecef] to-[#a9ccef] overflow-hidden">
+        <div className="relative h-[700px] flex items-center justify-center bg-gradient-to-r from-[#a9ccef] via-[#e9ecef] to-[#a9ccef] dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden">
             {/* Background Image with Infinite Animation */}
             <motion.div
-                className="absolute inset-0 bg-cover bg-center opacity-20" // Adjust opacity as needed
+                className="absolute inset-0 bg-cover bg-center opacity-20 dark:opacity-10" // Adjust opacity as needed
                 style={{ backgroundImage: `url("https://example.com/your-background-image.jpg")` }} // Add your background image URL here
                 initial={{ x: 0, y: 0 }}
                 animate={{ x: [0, 10, 0], y: [0, 10, 0] }}
@@ -29,7 +29,7 @@ const Banner = () => {
 
             {/* Pulsating Background Overlay */}
             <motion.div
-                className="absolute inset-0 bg-white/30 backdrop-blur-sm" // Reduced opacity to 30%
+                className="absolute inset-0 bg-white/30 backdrop-blur-sm dark:bg-black/30" // Reduced opacity to 30%
                 initial={{ opacity: 0.6 }}
                 animate={{ opacity: 0.8 }}
                 transition={{ duration: 2, repeat: Infinity, repeatType: "mirror", ease: "easeInOut" }}
@@ -41,7 +41,7 @@ const Banner = () => {
                 <div className="text-center lg:text-left z-10 max-w-lg lg:max-w-xl">
                     {/* Breathing Text Animation with Gradient */}
                     <motion.h1
-                        className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent mb-4 font-sans"
+                        className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent mb-4 font-sans dark:from-blue-400 dark:to-purple-400"
                         initial={{ opacity: 0, y: -50 }}
                         animate={{ opacity: 1, y: 0, scale: 1.05 }}
                         transition={{ duration: 3, delay: 0.5, repeat: Infinity, repeatType: "mirror", ease: "easeInOut" }}
@@ -51,7 +51,7 @@ const Banner = () => {
 
                     {/* Additional Content */}
                     <motion.p
-                        className="text-lg md:text-xl text-gray-600 mb-8 font-sans"
+                        className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 font-sans"
                         initial={{ opacity: 0, y: 50 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 1 }}
@@ -68,7 +68,7 @@ const Banner = () => {
                     {/* Additional Content (Example: Numbers and Text) */}
                     <div className="mt-10 flex flex-wrap justify-center lg:justify-start space-x-4 lg:space-x-8">
                         <motion.div
-                            className="text-gray-900 mb-4 lg:mb-0"
+                            className="text-gray-900 dark:text-gray-100 mb-4 lg:mb-0"
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, delay: 2 }}
@@ -77,7 +77,7 @@ const Banner = () => {
                             <p className="text-sm">Years</p>
                         </motion.div>
                         <motion.div
-                            className="text-gray-900 mb-4 lg:mb-0"
+                            className="text-gray-900 dark:text-gray-100 mb-4 lg:mb-0"
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, delay: 2.2 }}
@@ -86,7 +86,7 @@ const Banner = () => {
                             <p className="text-sm">Countries</p>
                         </motion.div>
                         <motion.div
-                            className="text-gray-900 mb-4 lg:mb-0"
+                            className="text-gray-900 dark:text-gray-100 mb-4 lg:mb-0"
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, delay: 2.4 }}
@@ -95,7 +95,7 @@ const Banner = () => {
                             <p className="text-sm">Professionals</p>
                         </motion.div>
                         <motion.div
-                            className="text-gray-900 mb-4 lg:mb-0"
+                            className="text-gray-900 dark:text-gray-100 mb-4 lg:mb-0"
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, delay: 2.6 }}
@@ -116,7 +116,7 @@ const Banner = () => {
                     <motion.img
                         src="https://i.ibb.co.com/v4NZLH71/pic-bg.jpg" // Add your side image URL here
                         alt="Side Image"
-                        className="w-full max-w-2xl rounded-lg "
+                        className="w-full max-w-2xl rounded-lg shadow-lg dark:shadow-gray-800/50"
                         initial={{ y: 0, scale: 1 }}
                         animate={{ y: [0, -20, 0], scale: [1, 1.05, 1] }}
                         transition={{
@@ -155,19 +155,19 @@ const Banner = () => {
 
             {/* Additional Floating Circles (Optional) */}
             <motion.div
-                className="absolute top-20 left-20 w-12 h-12 bg-blue-500 rounded-full opacity-10" // Reduced opacity to 10%
+                className="absolute top-20 left-20 w-12 h-12 bg-blue-500 rounded-full opacity-10 dark:opacity-20" // Reduced opacity to 10%
                 initial={{ y: 0 }}
                 animate={{ y: [0, -20, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             />
             <motion.div
-                className="absolute bottom-20 right-20 w-10 h-10 bg-purple-500 rounded-full opacity-10" // Reduced opacity to 10%
+                className="absolute bottom-20 right-20 w-10 h-10 bg-purple-500 rounded-full opacity-10 dark:opacity-20" // Reduced opacity to 10%
                 initial={{ y: 0 }}
                 animate={{ y: [0, -20, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             />
             <motion.div
-                className="absolute top-40 right-10 w-8 h-8 bg-yellow-500 rounded-full opacity-10" // Reduced opacity to 10%
+                className="absolute top-40 right-10 w-8 h-8 bg-yellow-500 rounded-full opacity-10 dark:opacity-20" // Reduced opacity to 10%
                 initial={{ y: 0 }}
                 animate={{ y: [0, -20, 0] }}
                 transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}

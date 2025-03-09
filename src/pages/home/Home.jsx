@@ -17,7 +17,6 @@ const Home = () => {
             <OurServices />
             <StatsSection />
             <OurClients />
-            {/* <TechStacks />  jodi Add korar proyjon lage */}
             <PartnerSection />
             <ContactSection />
             <FaqSection />

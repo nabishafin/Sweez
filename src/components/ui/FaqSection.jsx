@@ -51,14 +51,14 @@ const FaqSection = () => {
     };
 
     return (
-        <div className="py-12 bg-gray-100 dark:bg-gray-900">
+        <div className="py-16 bg-white dark:bg-gray-900">
             <div className="container mx-auto px-4">
                 {/* সেকশন টাইটেল */}
                 <motion.h2
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8"
+                    className="text-4xl font-bold text-center text-gray-900 dark:text-white mb-12"
                 >
                     Frequently Asked Questions
                 </motion.h2>
@@ -68,23 +68,23 @@ const FaqSection = () => {
                     variants={stagger}
                     initial="hidden"
                     animate="visible"
-                    className="space-y-4"
+                    className="space-y-6"
                 >
                     {faqs.map((faq, index) => (
                         <motion.div
                             key={faq.id}
                             variants={fadeInUp}
-                            className="bg-white dark:bg-gray-800 rounded-lg shadow-md"
+                            className="bg-[#d9e4ef] dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300"
                         >
                             {/* প্রশ্ন */}
                             <button
                                 onClick={() => toggleAccordion(index)}
-                                className="w-full flex justify-between items-center p-6 text-left focus:outline-none"
+                                className="w-full flex justify-between items-center p-8 text-left focus:outline-none"
                             >
-                                <span className="text-lg font-semibold text-gray-900 dark:text-white">
+                                <span className="text-xl font-semibold text-gray-900 dark:text-white">
                                     {faq.question}
                                 </span>
-                                <span className="text-gray-600 dark:text-gray-300">
+                                <span className="text-2xl text-green-600 dark:text-green-400">
                                     {activeIndex === index ? "−" : "+"}
                                 </span>
                             </button>
@@ -99,7 +99,7 @@ const FaqSection = () => {
                                         transition={{ duration: 0.3 }}
                                         className="overflow-hidden"
                                     >
-                                        <div className="px-6 pb-6 text-gray-600 dark:text-gray-300">
+                                        <div className="px-8 pb-8 text-gray-700 dark:text-gray-300">
                                             {faq.answer}
                                         </div>
                                     </motion.div>

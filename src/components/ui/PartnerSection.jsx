@@ -3,10 +3,11 @@ import { motion } from "framer-motion";
 
 // Import the partner image if it's located in the 'src/assets' folder
 import partnerImage from '../../assets/partner.jpg';
+import Button from "../shared/Button";
 
 function PartnerSection() {
     return (
-        <section className="partner-section py-16 bg-gradient-to-r from-white via-[#a9ccef] to-white dark:bg-gray-800">
+        <section className="partner-section py-16 bg-gradient-to-r from-white via-[#a9ccef] to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
             <div className="container mx-auto px-4">
                 <div className="flex flex-col md:flex-row items-center">
                     {/* Text Content */}
@@ -27,16 +28,10 @@ function PartnerSection() {
                         >
                             With the help of our partners, we can share our expertise and resources around the world. And thus we are expanding as the home of top IT professionals. So contact us to see how you can join our global family!
                         </motion.p>
-                        <motion.button
-                            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-all"
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.8, delay: 0.4 }}
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                        >
-                            See Why & How
-                        </motion.button>
+                        <Button
+                            text={'See Why & How'}
+                            className="bg-blue-500 hover:bg-blue-600 text-white dark:bg-blue-600 dark:hover:bg-blue-700"
+                        />
                     </div>
 
                     {/* Floating Image */}
@@ -44,7 +39,7 @@ function PartnerSection() {
                         <motion.img
                             src={partnerImage} // Use the imported image path here
                             alt="Partner Illustration"
-                            className="w-full max-w-md mx-auto"
+                            className="w-full max-w-md mx-auto rounded-lg shadow-lg dark:shadow-gray-800/50"
                             initial={{ opacity: 0, scale: 0.9 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             animate={{ y: [0, -20, 0] }} // Floating up and down animation
