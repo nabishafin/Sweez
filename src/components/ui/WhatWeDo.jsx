@@ -44,13 +44,9 @@ const WhatWeDo = () => {
                             <p className='mb-2'>Mission : freewebpad...This is what we are and this is what we do. We provide web solution Elements...</p>
                             <p>Vision : freewebpad...This is what we are and this is what we do. We provide web solution Elements...</p>
                         </div>
-                        <motion.button
-                            className="px-6 py-2 bg-white/10 dark:bg-gray-700/10 backdrop-blur-md border-2 border-white/20 dark:border-gray-700/20 text-purple-500 dark:text-purple-400 rounded-full hover:bg-gradient-to-r from-purple-500/20 to-pink-500/20 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl"
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.9 }}
-                        >
-                            Learn More
-                        </motion.button>
+                        <div className='mt-2'>
+                            <Button text={'Learn More'} />
+                        </div>
                     </motion.div>
                 </motion.div>
             </div>

@@ -5,26 +5,21 @@ import { motion } from 'framer-motion';
 
 function OurClients() {
     const clients = [
-        { name: 'YouTube', icon: <FaYoutube />, image: null },
-        { name: 'Google', icon: <SiGoogle />, image: null },
-        { name: 'Facebook', icon: <FaFacebook />, image: null },
-        { name: 'Pinterest', icon: <FaPinterest />, image: null },
-        { name: 'Behance', icon: <FaBehance />, image: null },
-        { name: 'DISCORD', icon: <FaDiscord />, image: null },
-        { name: 'SPACEX', icon: null, image: '/spacex-logo.png' }, // Replace with actual path
-        { name: 'Microsoft', icon: <FaMicrosoft />, image: null },
-        { name: 'amazon', icon: null, image: '/amazon-logo.png' }, // Replace with actual path
-        { name: 'android', icon: <SiAndroid />, image: null },
-        { name: 'WordPress', icon: <SiWordpress />, image: null },
-        { name: 'Dropbox', icon: <FaDropbox />, image: null },
+        { name: 'Pinterest', icon: null, image: 'https://i.ibb.co.com/v4ySJCbD/Pinterest-Logo.png' },
+        { name: 'Behance', icon: null, image: 'https://i.ibb.co.com/GQZfyxRr/Behance.png' },
+        { name: 'IWC', icon: null, image: 'https://i.ibb.co.com/W4qDKmrT/iwc.png' },
+        { name: 'SPACEX', icon: null, image: 'https://i.ibb.co.com/cXcTmMVw/spece-logo.png' }, // Replace with actual path
+        { name: 'Dropbox', icon: null, image: "https://i.ibb.co.com/GQsPP1f4/Dropbox.png" },
+        { name: 'Plant', icon: null, image: 'https://i.ibb.co.com/LX44b1Wt/plant.png' }, // Replace with actual path
+
     ];
 
     return (
-        <section className="bg-gray-100 dark:bg-gray-800 py-16">
-            <div className="container mx-auto text-center">
+        <section className="bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 py-16 border-t border-b border-gray-200 dark:border-gray-700 shadow-lg">
+            <div className="container mx-auto text-center px-4 ">
                 {/* Section Heading */}
                 <motion.h5
-                    className="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-2"
+                    className="text-sm md:text-base text-blue-500 dark:text-blue-400 uppercase tracking-widest mb-2"
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
@@ -34,17 +29,17 @@ function OurClients() {
 
                 {/* Title */}
                 <motion.p
-                    className="text-2xl font-semibold mb-4 dark:text-white"
+                    className="text-2xl md:text-3xl font-bold mb-4 dark:text-white"
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                 >
-                    Trusted by over 786+ clients.
+                    Trusted by over <span className='text-blue-500'>786+</span> clients.
                 </motion.p>
 
                 {/* Description */}
                 <motion.p
-                    className="text-gray-600 dark:text-gray-300 mb-8"
+                    className="text-gray-700 dark:text-gray-300 mb-8 text-sm md:text-base"
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.4 }}
@@ -53,23 +48,24 @@ function OurClients() {
                 </motion.p>
 
                 {/* Client Logos Grid */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
                     {clients.map((client, index) => (
                         <motion.div
                             key={index}
-                            className="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-md flex items-center justify-center hover:shadow-lg transition-shadow"
+                            className="bg-white dark:bg-gray-700 p-4 md:p-6 rounded-lg shadow-md flex items-center justify-center hover:shadow-lg hover:scale-105 transition-all duration-300"
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
+                            whileHover={{ rotate: 10, scale: 1.1 }}
                             transition={{ duration: 0.6, delay: 0.1 * index }}
                         >
                             {client.icon ? (
-                                <span className="text-3xl text-gray-700 dark:text-gray-200" aria-label={client.name}>
+                                <span className="text-3xl md:text-4xl text-gray-700 dark:text-gray-200 hover:text-blue-500 transition-colors" aria-label={client.name}>
                                     {client.icon}
                                 </span>
                             ) : client.image ? (
-                                <img src={client.image} alt={client.name} className="max-h-10" />
+                                <img src={client.image} alt={client.name} className="max-h-10 md:max-h-12 hover:opacity-80 transition-opacity" />
                             ) : (
-                                <span className="text-gray-700 dark:text-gray-200">{client.name}</span>
+                                <span className="text-gray-700 dark:text-gray-200 font-medium">{client.name}</span>
                             )}
                         </motion.div>
                     ))}

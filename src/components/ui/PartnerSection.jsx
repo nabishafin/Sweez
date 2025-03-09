@@ -6,7 +6,7 @@ import partnerImage from '../../assets/partner.jpg';
 
 function PartnerSection() {
     return (
-        <section className="partner-section py-16 bg-gray-100 dark:bg-gray-800">
+        <section className="partner-section py-16 bg-gradient-to-r from-white via-[#a9ccef] to-white dark:bg-gray-800">
             <div className="container mx-auto px-4">
                 <div className="flex flex-col md:flex-row items-center">
                     {/* Text Content */}
