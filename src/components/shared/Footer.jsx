@@ -2,11 +2,28 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
 
+// লোগো ইমেজ URL
+const logo = "https://sweez.xyz/image/Logo/sweez_2000.png";
+
 const Footer = () => {
     return (
         <footer className="bg-gray-800 dark:bg-gray-700 text-white py-12">
             <div className="container mx-auto px-4">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    {/* লোগো সাইডে রাখুন */}
+                    <motion.div
+                        className="flex justify-center md:justify-start items-center"
+                        initial={{ opacity: 0, y: -50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <img
+                            src={logo} // লোগো ইমেজ সোর্স
+                            alt="Sweez Logo"
+                            className="h-8" // লোগোর সাইজ কাস্টমাইজ করুন
+                        />
+                    </motion.div>
+
                     {/* Quick Links */}
                     <motion.div
                         className="text-center md:text-left"
@@ -73,7 +90,7 @@ const Footer = () => {
                         </div>
                     </motion.div>
 
-                    {/* Copyright Information */}
+                    {/* Contact Information */}
                     <motion.div
                         className="text-center md:text-right"
                         initial={{ opacity: 0, y: 50 }}
