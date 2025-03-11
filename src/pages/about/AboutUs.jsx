@@ -47,11 +47,11 @@ const AboutUs = () => {
     ];
 
     return (
-        <section className="py-16 bg-gray-50 dark:bg-gray-800">
+        <section className="py-16 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-900">
             <div className="container mx-auto px-4">
                 {/* Page Heading */}
                 <motion.h1
-                    className="text-4xl md:text-5xl font-bold text-center text-gray-900 dark:text-white mb-12"
+                    className="text-4xl md:text-5xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mb-12"
                     initial={{ opacity: 0, y: -50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
@@ -67,18 +67,18 @@ const AboutUs = () => {
                     transition={{ duration: 0.8, delay: 0.2 }}
                 >
                     <p className="text-lg text-gray-600 dark:text-gray-300">
-                        Welcome to <span className="font-semibold text-blue-600">Sweez</span>, where innovation meets excellence. We are a team of passionate professionals dedicated to delivering top-notch digital solutions that drive growth and success for our clients.
+                        Welcome to <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Sweez</span>, where innovation meets excellence. We are a team of passionate professionals dedicated to delivering top-notch digital solutions that drive growth and success for our clients.
                     </p>
                 </motion.div>
 
                 {/* Mission Statement */}
                 <motion.div
-                    className="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md mb-16"
+                    className="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-2xl border border-gray-100 dark:border-gray-600 mb-16"
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
                 >
-                    <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                    <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mb-6">
                         Our Mission
                     </h2>
                     <p className="text-lg text-gray-600 dark:text-gray-300">
@@ -93,19 +93,20 @@ const AboutUs = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.6 }}
                 >
-                    <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">
+                    <h2 className="text-3xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mb-12">
                         Meet Our Team
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {teamMembers.map((member) => (
-                            <div
+                            <motion.div
                                 key={member.id}
-                                className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md text-center"
+                                className="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-2xl border border-gray-100 dark:border-gray-600 hover:border-blue-500 dark:hover:border-purple-500 transition-all duration-300 transform hover:scale-105"
+                                whileHover={{ scale: 1.05 }}
                             >
                                 <img
                                     src={member.image}
                                     alt={member.name}
-                                    className="w-32 h-32 rounded-full mx-auto mb-4"
+                                    className="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-blue-100 dark:border-purple-100"
                                 />
                                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                                     {member.name}
@@ -116,7 +117,7 @@ const AboutUs = () => {
                                 <p className="text-gray-600 dark:text-gray-300">
                                     {member.description}
                                 </p>
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
                 </motion.div>
@@ -127,14 +128,15 @@ const AboutUs = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.8 }}
                 >
-                    <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">
+                    <h2 className="text-3xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mb-12">
                         Our Core Values
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {coreValues.map((value) => (
-                            <div
+                            <motion.div
                                 key={value.id}
-                                className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md text-center"
+                                className="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-2xl border border-gray-100 dark:border-gray-600 hover:border-blue-500 dark:hover:border-purple-500 transition-all duration-300 transform hover:scale-105"
+                                whileHover={{ scale: 1.05 }}
                             >
                                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                                     {value.title}
@@ -142,7 +144,7 @@ const AboutUs = () => {
                                 <p className="text-gray-600 dark:text-gray-300">
                                     {value.description}
                                 </p>
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
                 </motion.div>

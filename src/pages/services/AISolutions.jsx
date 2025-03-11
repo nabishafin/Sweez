@@ -1,38 +1,38 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const MobileApps = () => {
+const AISolutions = () => {
     // Key features data
     const keyFeatures = [
         {
             id: 1,
-            title: "Cross-Platform Development",
-            description: "We build apps that work seamlessly on both iOS and Android platforms.",
+            title: "Machine Learning",
+            description: "We build intelligent systems that learn and adapt to deliver actionable insights.",
         },
         {
             id: 2,
-            title: "User-Centric Design",
-            description: "Our designs focus on providing an intuitive and engaging user experience.",
+            title: "Natural Language Processing",
+            description: "Our NLP solutions enable seamless human-computer interactions.",
         },
         {
             id: 3,
-            title: "High Performance",
-            description: "We optimize your app for speed and efficiency to ensure smooth performance.",
+            title: "Computer Vision",
+            description: "We develop AI-powered vision systems for image and video analysis.",
         },
         {
             id: 4,
-            title: "Scalability",
-            description: "Our apps are built to grow with your business and handle increasing user loads.",
+            title: "Predictive Analytics",
+            description: "Our AI models predict trends and outcomes to drive data-driven decisions.",
         },
         {
             id: 5,
-            title: "Security",
-            description: "We implement robust security measures to protect your app and user data.",
+            title: "Automation",
+            description: "We automate repetitive tasks to improve efficiency and reduce costs.",
         },
         {
             id: 6,
-            title: "Maintenance & Support",
-            description: "We provide ongoing support to keep your app running smoothly.",
+            title: "AI Consulting",
+            description: "We provide expert guidance to help you integrate AI into your business.",
         },
     ];
 
@@ -41,27 +41,32 @@ const MobileApps = () => {
         {
             id: 1,
             title: "Discovery & Planning",
-            description: "We work with you to understand your goals and plan the project.",
+            description: "We work with you to understand your goals and plan the AI solution.",
         },
         {
             id: 2,
-            title: "Design & Prototyping",
-            description: "We create wireframes and prototypes to visualize the final product.",
+            title: "Data Collection & Preparation",
+            description: "We gather and preprocess data to ensure high-quality inputs for AI models.",
         },
         {
             id: 3,
-            title: "Development",
-            description: "Our team builds your app using the latest technologies.",
+            title: "Model Development",
+            description: "Our team builds and trains AI models tailored to your needs.",
         },
         {
             id: 4,
-            title: "Testing & Launch",
-            description: "We thoroughly test your app and ensure a smooth launch.",
+            title: "Testing & Validation",
+            description: "We rigorously test and validate the AI solution to ensure accuracy.",
         },
         {
             id: 5,
-            title: "Maintenance & Support",
-            description: "We provide ongoing support to keep your app running smoothly.",
+            title: "Deployment & Integration",
+            description: "We deploy the AI solution and integrate it into your existing systems.",
+        },
+        {
+            id: 6,
+            title: "Monitoring & Optimization",
+            description: "We continuously monitor and optimize the AI solution for peak performance.",
         },
     ];
 
@@ -75,7 +80,7 @@ const MobileApps = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    Mobile App Development Services
+                    AI Solutions
                 </motion.h1>
 
                 {/* Introduction Section */}
@@ -86,7 +91,7 @@ const MobileApps = () => {
                     transition={{ duration: 0.8, delay: 0.2 }}
                 >
                     <p className="text-lg text-gray-600 dark:text-gray-300">
-                        At <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Sweez</span>, we specialize in creating high-performance mobile applications that deliver exceptional user experiences. Whether you need a simple app or a complex solution, we’ve got you covered.
+                        At <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Sweez</span>, we harness the power of artificial intelligence to solve complex problems and drive innovation. Our AI solutions are designed to transform your business and unlock new opportunities.
                     </p>
                 </motion.div>
 
@@ -107,7 +112,7 @@ const MobileApps = () => {
                                 className="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-2xl border border-gray-100 dark:border-gray-600 hover:border-blue-500 dark:hover:border-purple-500 transition-all duration-300 transform hover:scale-105"
                                 whileHover={{ scale: 1.05 }}
                             >
-                                <h3 className="text-2xl font-bold text-blue-600 dark:text-white mb-4 ">
+                                <h3 className="text-2xl font-bold text-blue-600 dark:text-white mb-4">
                                     {feature.title}
                                 </h3>
                                 <p className="text-gray-600 dark:text-gray-300">
@@ -156,10 +161,10 @@ const MobileApps = () => {
                     transition={{ duration: 0.8, delay: 0.8 }}
                 >
                     <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mb-6">
-                        Ready to Build Your Mobile App?
+                        Ready to Transform Your Business with AI?
                     </h2>
                     <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-                        Let’s turn your vision into reality. Contact us today to get started!
+                        Let’s build intelligent solutions that drive growth and innovation. Contact us today to get started!
                     </p>
                     <motion.a
                         href="/contact"
@@ -174,4 +179,4 @@ const MobileApps = () => {
     );
 };
 
-export default MobileApps;
+export default AISolutions;
