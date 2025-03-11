@@ -106,6 +106,54 @@ const Navbar = () => {
                                     AI Solutions
                                 </NavLink>
                             </li>
+                            <li>
+                                <NavLink
+                                    to="/services/aisolutions"
+                                    className={({ isActive }) =>
+                                        isActive
+                                            ? "text-blue-500 dark:text-blue-300 font-semibold bg-blue-50 dark:bg-gray-700 px-3 py-2 rounded-lg"
+                                            : "hover:text-blue-500 dark:hover:text-blue-300 hover:bg-blue-50 dark:hover:bg-gray-700 px-3 py-2 rounded-lg"
+                                    }
+                                >
+                                    AI Solutions
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink
+                                    to="/services/GraphicsDesign"
+                                    className={({ isActive }) =>
+                                        isActive
+                                            ? "text-blue-500 dark:text-blue-300 font-semibold bg-blue-50 dark:bg-gray-700 px-3 py-2 rounded-lg"
+                                            : "hover:text-blue-500 dark:hover:text-blue-300 hover:bg-blue-50 dark:hover:bg-gray-700 px-3 py-2 rounded-lg"
+                                    }
+                                >
+                                    Graphics Design
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink
+                                    to="/services/UI/UXDesign"
+                                    className={({ isActive }) =>
+                                        isActive
+                                            ? "text-blue-500 dark:text-blue-300 font-semibold bg-blue-50 dark:bg-gray-700 px-3 py-2 rounded-lg"
+                                            : "hover:text-blue-500 dark:hover:text-blue-300 hover:bg-blue-50 dark:hover:bg-gray-700 px-3 py-2 rounded-lg"
+                                    }
+                                >
+                                    UI/UX Design
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink
+                                    to="/services/DigitalMarketing"
+                                    className={({ isActive }) =>
+                                        isActive
+                                            ? "text-blue-500 dark:text-blue-300 font-semibold bg-blue-50 dark:bg-gray-700 px-3 py-2 rounded-lg"
+                                            : "hover:text-blue-500 dark:hover:text-blue-300 hover:bg-blue-50 dark:hover:bg-gray-700 px-3 py-2 rounded-lg"
+                                    }
+                                >
+                                    Digital Marketing
+                                </NavLink>
+                            </li>
                         </motion.ul>
                     )}
                 </AnimatePresence>
