@@ -94,18 +94,7 @@ const Navbar = () => {
                                     Mobile Apps
                                 </NavLink>
                             </li>
-                            <li>
-                                <NavLink
-                                    to="/services/ai-solutions"
-                                    className={({ isActive }) =>
-                                        isActive
-                                            ? "text-blue-500 dark:text-blue-300 font-semibold bg-blue-50 dark:bg-gray-700 px-3 py-2 rounded-lg"
-                                            : "hover:text-blue-500 dark:hover:text-blue-300 hover:bg-blue-50 dark:hover:bg-gray-700 px-3 py-2 rounded-lg"
-                                    }
-                                >
-                                    AI Solutions
-                                </NavLink>
-                            </li>
+
                             <li>
                                 <NavLink
                                     to="/services/aisolutions"
