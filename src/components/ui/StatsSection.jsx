@@ -13,7 +13,7 @@ const StatsSection = () => {
     return (
         <div className="bg-white dark:bg-gray-900 py-12"> {/* Added dark mode background */}
             <div className="container mx-auto px-4">
-                <div className="flex justify-around items-center">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
                     {stats.map((stat) => (
                         <motion.div
                             key={stat.id}

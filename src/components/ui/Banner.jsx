@@ -117,13 +117,11 @@ const Banner = () => {
                         src="https://i.ibb.co.com/v4NZLH71/pic-bg.jpg" // Add your side image URL here
                         alt="Side Image"
                         className="w-full max-w-2xl rounded-lg shadow-lg dark:shadow-gray-800/50"
-                        initial={{ y: 0, scale: 1 }}
-                        animate={{ y: [0, -20, 0], scale: [1, 1.05, 1] }}
+                        initial={{ y: -100, opacity: 0, scale: 0.9 }} // Start from the top (y: -100) and slightly transparent
+                        animate={{ y: 0, opacity: 1, scale: 1 }} // Move to the original position (y: 0) and fully visible
                         transition={{
-                            duration: 4,
-                            repeat: Infinity,
-                            repeatType: "mirror",
-                            ease: "easeInOut",
+                            duration: 1.5, // Duration of the animation
+                            ease: "easeOut", // Smooth easing effect
                         }}
                     />
                 </motion.div>
