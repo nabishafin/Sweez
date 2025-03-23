@@ -17,7 +17,10 @@ function PartnerSection() {
                 backgroundRepeat: 'no-repeat', // Prevent the image from repeating
             }}
         >
-            <div className="container mx-auto px-4">
+            {/* Dark mode overlay to hide the background image in dark mode */}
+            <div className="absolute inset-0 bg-white dark:bg-gray-900 opacity-0 dark:opacity-100"></div>
+
+            <div className="container mx-auto px-4 relative z-10">
                 <div className="flex flex-col md:flex-row items-center">
                     {/* Text Content */}
                     <div className="md:w-1/2 text-center md:text-left">

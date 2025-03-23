@@ -48,7 +48,7 @@ const OurServices = () => {
             bg: "bg-red-50 dark:bg-red-100" // Light red for light mode, lighter red for dark mode
         },
         {
-            icon: "/src/assets/", // Replace with your icon or image
+            icon: "/src/assets/d-marketing.png", // Replace with your icon or image
             title: "Digital Marketing",
             description: "Driving growth through data-driven digital marketing strategies.",
             bg: "bg-teal-50 dark:bg-teal-100" // Light teal for light mode, lighter teal for dark mode
@@ -101,7 +101,9 @@ const OurServices = () => {
                         <div className="relative z-10">
                             <h2 className="text-4xl font-bold mb-6">Our Services</h2>
                             <p className="mb-8 text-gray-200 text-lg">
-                                We offer a wide range of services to help your business grow and succeed in the digital world.
+                                "We specialize in providing a comprehensive suite of services that are designed to empower businesses, large and small, to thrive and achieve lasting success in today’s ever-evolving digital world. With the rapid advancements in technology and the increasing reliance on digital platforms, it’s crucial for businesses to establish a strong online presence, engage their target audience effectively, and remain competitive in the marketplace. Our team of experts is dedicated to delivering tailored solutions that address the unique challenges of each business.
+
+                                Beyond these core offerings, we also provide e-commerce solutions, mobile app development, and advanced analytics to help you understand your customer behavior and make informed decisions. We take a holistic approach to every project, ensuring that each aspect of your digital strategy is integrated seamlessly for maximum impact. Our goal is to help you not only survive but thrive in the digital age, creating sustainable growth, fostering customer loyalty, and positioning your business for long-term success."
                             </p>
 
                             {/* Button with Hover Effect */}

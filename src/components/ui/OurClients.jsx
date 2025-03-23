@@ -18,15 +18,15 @@ function OurClients() {
     ];
 
     return (
-        <section className="bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 py-16 border-t border-b border-gray-200 dark:border-gray-700 shadow-lg">
-            <div className="container mx-auto text-center px-4">
+        <section className="bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 py-16 border-t border-b border-gray-200 dark:border-gray-700 shadow-lg ">
+            <div className="container mx-auto text-center px-4 ">
                 {/* Section Heading */}
                 <h5 className="text-sm md:text-base text-blue-500 dark:text-blue-400 uppercase tracking-widest mb-2">
                     OUR CLIENTS
                 </h5>
 
                 {/* Title */}
-                <p className="text-2xl md:text-3xl font-bold mb-4 dark:text-white">
+                <p className="text-2xl md:text-3xl font-bold mb-4 dark:text-white py-10">
                     Trusted by over <span className="text-blue-500">786+</span> clients.
                 </p>
 
