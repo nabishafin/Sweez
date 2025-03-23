@@ -7,7 +7,7 @@ const logo = "https://sweez.xyz/image/Logo/sweez_2000.png";
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-800 dark:bg-gray-700 text-white py-12">
+        <footer className="bg-slate-100 dark:bg-gray-800 text-gray-800 dark:text-white py-12">
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     {/* লোগো সাইডে রাখুন */}
@@ -20,7 +20,7 @@ const Footer = () => {
                         <img
                             src={logo} // লোগো ইমেজ সোর্স
                             alt="Sweez Logo"
-                            className="h-8" // লোগোর সাইজ কাস্টমাইজ করুন
+                            className="h-8 dark:bg-white dark:p-3 dark:rounded-lg dark:w-48 dark:h-16" // লোগোর সাইজ কাস্টমাইজ করুন
                         />
                     </motion.div>
 
@@ -41,6 +41,11 @@ const Footer = () => {
                             <li>
                                 <a href="/terms" className="hover:text-blue-500 transition-colors">
                                     Terms and Policy
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/privacy" className="hover:text-blue-500 transition-colors">
+                                    Privacy Policy
                                 </a>
                             </li>
                         </ul>
@@ -102,6 +107,19 @@ const Footer = () => {
                         <p className="text-gray-400">Phone: +123 456 7890</p>
                     </motion.div>
                 </div>
+
+                {/* Additional Info */}
+                <motion.div
+                    className="text-center mt-8 md:mt-12"
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.6 }}
+                >
+                    <h3 className="text-xl font-bold mb-4">About Us</h3>
+                    <p className="text-gray-400 max-w-xl mx-auto">
+                        Sweez is committed to providing top-notch digital services. Our team of experts is here to help you with everything from web development to digital marketing. Connect with us for personalized solutions.
+                    </p>
+                </motion.div>
 
                 {/* Copyright Text */}
                 <motion.div

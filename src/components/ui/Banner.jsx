@@ -12,7 +12,7 @@ import {
     FaChartLine,
 } from "react-icons/fa";
 
-import BackgroundImage from "../../assets/istockphoto-1473121061-612x612.jpg";
+import BackgroundImage from "../../assets/bg-bluesade.avif";
 import { FaArrowRight } from "react-icons/fa6";
 
 const Banner = () => {

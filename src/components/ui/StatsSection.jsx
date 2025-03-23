@@ -18,7 +18,7 @@ const StatsSection = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
                     {stats.map((stat) => {
                         const { ref, inView } = useInView({
-                            triggerOnce: true,
+                            triggerOnce: false, // Change this to false to keep triggering when section re-enters view
                             threshold: 0.5,
                         });
 
@@ -116,6 +116,7 @@ const StatsSection = () => {
                                 <h3 className="text-2xl font-bold text-blue-500 dark:text-blue-400">
                                     {inView && (
                                         <CountUp
+                                            key={inView ? stat.id : 'reset'} // Key prop will reset the component
                                             start={0}
                                             end={stat.value}
                                             duration={2.5}
