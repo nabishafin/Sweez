@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
+import { SunIcon } from "@heroicons/react/24/solid";
 import { NavLink } from "react-router-dom";
-import { FaArrowDown } from "react-icons/fa6";
+import { FaArrowDown, n } from "react-icons/fa6";
 import { motion, AnimatePresence } from "framer-motion";
-
+import Button from "./Button";
+import { GiMoon } from "react-icons/gi";
 const Navbar = () => {
     const [darkMode, setDarkMode] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const [isMenuOpen, setIsMenuOpen] = useState(false); // Mobile menu state
 
     // Toggle theme function
     const toggleTheme = () => {
@@ -28,8 +28,8 @@ const Navbar = () => {
                     to="/"
                     className={({ isActive }) =>
                         isActive
-                            ? "text-blue-500 dark:text-blue-300 font-bold text-lg"
-                            : "hover:text-blue-500 dark:hover:text-blue-300 font-bold text-lg"
+                            ? "text-blue-500 dark:text-blue-300 font-semibold text-lg"
+                            : "hover:text-blue-500 dark:hover:text-blue-300 font-semibold text-lg"
                     }
                 >
                     Home
@@ -41,8 +41,8 @@ const Navbar = () => {
                     to="/about"
                     className={({ isActive }) =>
                         isActive
-                            ? "text-blue-500 dark:text-blue-300 font-bold text-lg"
-                            : "hover:text-blue-500 dark:hover:text-blue-300 font-bold text-lg"
+                            ? "text-blue-500 dark:text-blue-300 font-semibold text-lg"
+                            : "hover:text-blue-500 dark:hover:text-blue-300 font-semibold text-lg"
                     }
                 >
                     About Us
@@ -57,7 +57,7 @@ const Navbar = () => {
             >
                 <label
                     tabIndex={0}
-                    className="hover:text-blue-500 dark:hover:text-blue-300 flex items-center gap-1 cursor-pointer font-bold text-lg"
+                    className="hover:text-blue-500 dark:hover:text-blue-300 flex items-center gap-1 cursor-pointer font-semibold text-lg"
                 >
                     Services <FaArrowDown size={15} className="text-xl mt-1" />
                 </label>
@@ -71,77 +71,107 @@ const Navbar = () => {
                             className="dropdown-content menu p-2 shadow bg-base-100 dark:bg-gray-800 rounded-box w-52"
                         >
                             <li>
-                                <NavLink
-                                    to="/services/web-development"
-                                    className={({ isActive }) =>
-                                        isActive
-                                            ? "text-blue-500 dark:text-blue-300 font-semibold bg-blue-50 dark:bg-gray-700 px-3 py-2 rounded-lg"
-                                            : "hover:text-blue-500 dark:hover:text-blue-300 hover:bg-blue-50 dark:hover:bg-gray-700 px-3 py-2 rounded-lg"
-                                    }
+                                <motion.div
+                                    whileHover={{ scale: 1.1 }} // Scale up on hover
+                                    transition={{ type: "spring", stiffness: 300, damping: 20 }} // Smooth scale animation
                                 >
-                                    Web Development
-                                </NavLink>
+                                    <NavLink
+                                        to="/services/web-development"
+                                        className={({ isActive }) =>
+                                            isActive
+                                                ? "text-blue-500 dark:text-blue-300 font-semibold bg-blue-50 dark:bg-gray-700 px-3 py-2 rounded-lg"
+                                                : "hover:text-blue-500 dark:hover:text-blue-300  dark:hover:bg-gray-700 px-3 py-2 rounded-lg"
+                                        }
+                                    >
+                                        Web Development
+                                    </NavLink>
+                                </motion.div>
                             </li>
                             <li>
-                                <NavLink
-                                    to="/services/mobileapp"
-                                    className={({ isActive }) =>
-                                        isActive
-                                            ? "text-blue-500 dark:text-blue-300 font-semibold bg-blue-50 dark:bg-gray-700 px-3 py-2 rounded-lg"
-                                            : "hover:text-blue-500 dark:hover:text-blue-300 hover:bg-blue-50 dark:hover:bg-gray-700 px-3 py-2 rounded-lg"
-                                    }
+                                <motion.div
+                                    whileHover={{ scale: 1.1 }}
+                                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
                                 >
-                                    Mobile Apps
-                                </NavLink>
+                                    <NavLink
+                                        to="/services/mobileapp"
+                                        className={({ isActive }) =>
+                                            isActive
+                                                ? "text-blue-500 dark:text-blue-300 font-semibold bg-blue-50 dark:bg-gray-700 px-3 py-2 rounded-lg"
+                                                : "hover:text-blue-500 dark:hover:text-blue-300  dark:hover:bg-gray-700 px-3 py-2 rounded-lg"
+                                        }
+                                    >
+                                        Mobile Apps
+                                    </NavLink>
+                                </motion.div>
                             </li>
 
                             <li>
-                                <NavLink
-                                    to="/services/aisolutions"
-                                    className={({ isActive }) =>
-                                        isActive
-                                            ? "text-blue-500 dark:text-blue-300 font-semibold bg-blue-50 dark:bg-gray-700 px-3 py-2 rounded-lg"
-                                            : "hover:text-blue-500 dark:hover:text-blue-300 hover:bg-blue-50 dark:hover:bg-gray-700 px-3 py-2 rounded-lg"
-                                    }
+                                <motion.div
+                                    whileHover={{ scale: 1.1 }}
+                                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
                                 >
-                                    AI Solutions
-                                </NavLink>
+                                    <NavLink
+                                        to="/services/aisolutions"
+                                        className={({ isActive }) =>
+                                            isActive
+                                                ? "text-blue-500 dark:text-blue-300 font-semibold bg-blue-50 dark:bg-gray-700 px-3 py-2 rounded-lg"
+                                                : "hover:text-blue-500 dark:hover:text-blue-300  dark:hover:bg-gray-700 px-3 py-2 rounded-lg"
+                                        }
+                                    >
+                                        AI Solutions
+                                    </NavLink>
+                                </motion.div>
                             </li>
                             <li>
-                                <NavLink
-                                    to="/services/GraphicsDesign"
-                                    className={({ isActive }) =>
-                                        isActive
-                                            ? "text-blue-500 dark:text-blue-300 font-semibold bg-blue-50 dark:bg-gray-700 px-3 py-2 rounded-lg"
-                                            : "hover:text-blue-500 dark:hover:text-blue-300 hover:bg-blue-50 dark:hover:bg-gray-700 px-3 py-2 rounded-lg"
-                                    }
+                                <motion.div
+                                    whileHover={{ scale: 1.1 }}
+                                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
                                 >
-                                    Graphics Design
-                                </NavLink>
+                                    <NavLink
+                                        to="/services/GraphicsDesign"
+                                        className={({ isActive }) =>
+                                            isActive
+                                                ? "text-blue-500 dark:text-blue-300 font-semibold bg-blue-50 dark:bg-gray-700 px-3 py-2 rounded-lg"
+                                                : "hover:text-blue-500 dark:hover:text-blue-300  dark:hover:bg-gray-700 px-3 py-2 rounded-lg"
+                                        }
+                                    >
+                                        Graphics Design
+                                    </NavLink>
+                                </motion.div>
                             </li>
                             <li>
-                                <NavLink
-                                    to="/services/UI/UXDesign"
-                                    className={({ isActive }) =>
-                                        isActive
-                                            ? "text-blue-500 dark:text-blue-300 font-semibold bg-blue-50 dark:bg-gray-700 px-3 py-2 rounded-lg"
-                                            : "hover:text-blue-500 dark:hover:text-blue-300 hover:bg-blue-50 dark:hover:bg-gray-700 px-3 py-2 rounded-lg"
-                                    }
+                                <motion.div
+                                    whileHover={{ scale: 1.1 }}
+                                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
                                 >
-                                    UI/UX Design
-                                </NavLink>
+                                    <NavLink
+                                        to="/services/UI/UXDesign"
+                                        className={({ isActive }) =>
+                                            isActive
+                                                ? "text-blue-500 dark:text-blue-300 font-semibold bg-blue-50 dark:bg-gray-700 px-3 py-2 rounded-lg"
+                                                : "hover:text-blue-500 dark:hover:text-blue-300  dark:hover:bg-gray-700 px-3 py-2 rounded-lg"
+                                        }
+                                    >
+                                        UI/UX Design
+                                    </NavLink>
+                                </motion.div>
                             </li>
                             <li>
-                                <NavLink
-                                    to="/services/DigitalMarketing"
-                                    className={({ isActive }) =>
-                                        isActive
-                                            ? "text-blue-500 dark:text-blue-300 font-semibold bg-blue-50 dark:bg-gray-700 px-3 py-2 rounded-lg"
-                                            : "hover:text-blue-500 dark:hover:text-blue-300 hover:bg-blue-50 dark:hover:bg-gray-700 px-3 py-2 rounded-lg"
-                                    }
+                                <motion.div
+                                    whileHover={{ scale: 1.1 }}
+                                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
                                 >
-                                    Digital Marketing
-                                </NavLink>
+                                    <NavLink
+                                        to="/services/DigitalMarketing"
+                                        className={({ isActive }) =>
+                                            isActive
+                                                ? "text-blue-500 dark:text-blue-300 font-semibold bg-blue-50 dark:bg-gray-700 px-3 py-2 rounded-lg"
+                                                : "hover:text-blue-500 dark:hover:text-blue-300  dark:hover:bg-gray-700 px-3 py-2 rounded-lg"
+                                        }
+                                    >
+                                        Digital Marketing
+                                    </NavLink>
+                                </motion.div>
                             </li>
                         </motion.ul>
                     )}
@@ -153,8 +183,8 @@ const Navbar = () => {
                     to="/blog"
                     className={({ isActive }) =>
                         isActive
-                            ? "text-blue-500 dark:text-blue-300 font-bold text-lg"
-                            : "hover:text-blue-500 dark:hover:text-blue-300 font-bold text-lg"
+                            ? "text-blue-500 dark:text-blue-300 font-semibold text-lg"
+                            : "hover:text-blue-500 dark:hover:text-blue-300 font-semibold text-lg"
                     }
                 >
                     Blog
@@ -167,7 +197,7 @@ const Navbar = () => {
                     className={({ isActive }) =>
                         isActive
                             ? "text-blue-500 dark:text-blue-300 font-semibold text-lg"
-                            : "hover:text-blue-500 dark:hover:text-blue-300 font-bold text-lg"
+                            : "hover:text-blue-500 dark:hover:text-blue-300 font-semibold text-lg"
                     }
                 >
                     Contact
@@ -186,14 +216,15 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 dark:bg-gray-800 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                        className="menu menu-sm dropdown-content bg-base-100 dark:bg-gray-800 rounded-box z-1 mt-3 w-52 p-2 shadow"
+                    >
                         {links}
                     </ul>
                 </div>
 
                 {/* Brand Logo */}
                 <NavLink to="/" className="btn btn-ghost text-3xl dark:text-white">
-                    <img className="w-32" src="https://sweez.xyz/image/Logo/sweez_2000.png" alt="" />
+                    <img className="w-32 dark:bg-white dark:p-2 dark:rounded-lg" src="https://sweez.xyz/image/Logo/sweez_2000.png" alt="" />
                 </NavLink>
             </div>
 
@@ -212,30 +243,14 @@ const Navbar = () => {
                         {darkMode ? (
                             <SunIcon className="h-12 w-12 text-orange-400" />
                         ) : (
-                            <MoonIcon className="h-10 w-10 text-blue-950 dark:text-blue-300" />
+                            <GiMoon className="h-10 w-10 text-blue-950 dark:text-blue-300" />
                         )}
                     </button>
                 </div>
                 <div className="hidden md:block mt-1">
-                    <motion.div
-                        className="relative inline-flex items-center justify-center p-1 mb-2 mr-2 overflow-hidden text-lg font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"
-                        style={{
-                            background: "linear-gradient(90deg, #9333ea, #3b82f6, #9333ea)", // Initial gradient
-                            backgroundSize: "200% 200%", // For smooth animation
-                        }}
-                        animate={{
-                            backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"], // Rotate gradient
-                        }}
-                        transition={{
-                            duration: 3, // Animation duration
-                            repeat: Infinity, // Infinite loop
-                            ease: "linear", // Smooth animation
-                        }}
-                    >
-                        <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                            Schedule a Call
-                        </span>
-                    </motion.div>
+                    <Button text={' Schedule a Call'}>
+
+                    </Button>
                 </div>
             </div>
         </div>
@@ -243,3 +258,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
