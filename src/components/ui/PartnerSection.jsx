@@ -1,13 +1,22 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-// Import the partner image if it's located in the 'src/assets' folder
+// Import the partner image and background image
 import partnerImage from '../../assets/partner.jpg';
+import backgroundImage from '../../assets/bg-bluesade.avif'; // Import the background image
 import Button from "../shared/Button";
 
 function PartnerSection() {
     return (
-        <section className="partner-section py-16 bg-gradient-to-r from-white via-[#a9ccef] to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+        <section
+            className="partner-section py-16 bg-gradient-to-r from-white via-[#a9ccef] to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
+            style={{
+                backgroundImage: `url(${backgroundImage})`, // Set the background image
+                backgroundSize: 'cover', // Ensure the image covers the entire section
+                backgroundPosition: 'center', // Center the background image
+                backgroundRepeat: 'no-repeat', // Prevent the image from repeating
+            }}
+        >
             <div className="container mx-auto px-4">
                 <div className="flex flex-col md:flex-row items-center">
                     {/* Text Content */}

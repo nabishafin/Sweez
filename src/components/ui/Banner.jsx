@@ -12,7 +12,7 @@ import {
     FaChartLine,
 } from "react-icons/fa";
 
-import BackgroundImage from "../../assets/bg-bluesade.avif";
+import BackgroundImage from "../../assets/istockphoto-1473121061-612x612.jpg";
 import { FaArrowRight } from "react-icons/fa6";
 
 const Banner = () => {
@@ -49,11 +49,10 @@ const Banner = () => {
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.5 }}
                     style={{
-                        fontSize: 'inherit', // অথবা আপনি অন্য কোনো ফন্ট সাইজ দিতে পারেন
-                        fontWeight: 'bold', // অথবা 'normal' বা অন্য কোনো ফন্ট ওয়েট
-                        color: '#3b82f6', // অথবা আপনার পছন্দমতো অন্য কোনো কালার
-                        textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)', // টেক্সটে শ্যাডো যোগ করা হলো
-                        // এখানে আপনি অন্যান্য CSS স্টাইলও যোগ করতে পারেন
+                        fontSize: 'inherit',
+                        fontWeight: '',
+                        color: '#3b82f6',
+                        textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)',
                     }}
                 >
                     {texts[currentIndex]}
@@ -63,7 +62,7 @@ const Banner = () => {
     };
 
     return (
-        <div className="relative h-[700px] flex items-center justify-center bg-gradient-to-r from-[#a9ccef] via-[#e9ecef] to-[#a9ccef] dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden">
+        <div className="relative h-[750px] flex items-center justify-center bg-gradient-to-r from-[#a9ccef] via-[#e9ecef] to-[#a9ccef] dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden mt-10 md:m-0">
             <motion.div
                 className="absolute inset-0 bg-cover bg-center dark:opacity-10"
                 style={{ backgroundImage: `url(${BackgroundImage})` }}
@@ -81,26 +80,26 @@ const Banner = () => {
 
             <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between">
                 <div className="text-center lg:text-left z-10 w-full lg:w-6/12">
-                    <h1 className="text-2xl font-semibold text-[#3b82f6] mt-5">We Partner to Innovate.</h1>
-                    <h1 className="text-5xl font-bold mt-3">
-                        Build Stunning <span className="text-[] kaushan text-6xl ">
-                            <AnimatedTextSwitcher />
+                    <h1 className="text-2xl font-semibold text-[#3b82f6] mt-5 dark:text-blue-400">We Partner to Innovate.</h1>
+                    <h1 className="text-4xl md:text-5xl font-bold mt-3 dark:text-white">
+                        Build Stunning <span className="text-[] kaushan text-5xl md:text-6xl dark:text-blue-300">
+                            <span className="lg:hidden text-[#3b82f6]">projects</span>
+                            <span className="hidden lg:inline"><AnimatedTextSwitcher /></span>
                         </span>
                     </h1>
-                    <h4 className="text-2xl font-semibold mt-5">Sweez Pvt. Ltd. – Leading Software Company in Cumilla, Bangladesh</h4>
-                    <p>
-                        <span className="text-[#3b82f6]"> Sweez Pvt. Ltd.</span> offers top-notch custom web development, e-commerce portals, business portfolios, and management solutions. As one of the best software companies in Cumilla Bangladesh, we also develop fast, user-friendly mobile apps for iOS and Android, providing both native and cross-platform options.
+                    <h4 className="text-xl md:text-2xl font-semibold mt-5 dark:text-gray-300">Sweez Pvt. Ltd. – Leading Software Company in Cumilla, Bangladesh</h4>
+                    <p className="mt-3 md:mt-5 dark:text-gray-300">
+                        <span className="text-[#3b82f6] dark:text-blue-400"> Sweez Pvt. Ltd.</span> offers top-notch custom web development, e-commerce portals, business portfolios, and management solutions. As one of the best software companies in Cumilla Bangladesh, we also develop fast, user-friendly mobile apps for iOS and Android, providing both native and cross-platform options.
                     </p>
-                    <p className="mt-5">
+                    <p className="mt-3 md:mt-5 dark:text-gray-300">
                         Specializing in digital marketing and SEO services in Bangladesh, we help businesses boost their online presence and search rankings for growth. Partner with us for the best software and marketing solutions in Bangladesh.
                     </p>
 
                     <div className="mt-5">
                         <div className=" flex gap-1 items-center text-">
-                            <p className="text-xl font-semibold text-[#3b82f6]">Leran More</p>
-                            <FaArrowRight className="mt-1 text-[#3b82f6]" />
+                            <p className="text-xl font-semibold text-[#3b82f6] dark:text-blue-400">Leran More</p>
+                            <FaArrowRight className="mt-1 text-[#3b82f6] dark:text-blue-400" />
                         </div>
-
                     </div>
                 </div>
 

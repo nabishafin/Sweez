@@ -6,55 +6,55 @@ const OurServices = () => {
     // Services data
     const services = [
         {
-            icon: "💻", // Replace with your icon or image
+            icon: "/src/assets/8759069.png", // Replace with your icon or image
             title: "Software Development",
             description: "We build robust and scalable software solutions tailored to your business needs.",
             bg: "bg-yellow-50 dark:bg-yellow-100" // Light yellow for light mode, lighter yellow for dark mode
         },
         {
-            icon: "📱",
+            icon: "/src/assets/mobileApp.png", // Replace with your icon or image
             title: "Mobile App Development",
             description: "Crafting intuitive and high-performance mobile applications for iOS and Android.",
             bg: "bg-blue-50 dark:bg-blue-100" // Light blue for light mode, lighter blue for dark mode
         },
         {
-            icon: "🌐",
+            icon: "/src/assets/webdep.png", // Replace with your icon or image
             title: "Web Development",
             description: "Designing and developing responsive, user-friendly websites ",
             bg: "bg-green-50 dark:bg-green-100" // Light green for light mode, lighter green for dark mode
         },
         {
-            icon: "🎨",
+            icon: "/src/assets/gpdesign.png", // Replace with your icon or image
             title: "Graphics Design",
             description: "Creating visually stunning designs that captivate your audience.",
             bg: "bg-pink-50 dark:bg-pink-100" // Light pink for light mode, lighter pink for dark mode
         },
         {
-            icon: "🖌️",
+            icon: "/src/assets/ui ux.png", // Replace with your icon or image
             title: "UI/UX Design",
             description: "Designing seamless user experiences that enhance usability and satisfaction.",
             bg: "bg-purple-50 dark:bg-purple-100" // Light purple for light mode, lighter purple for dark mode
         },
         {
-            icon: "🤖",
+            icon: "/src/assets/ai icon.png", // Replace with your icon or image
             title: "AI Automation",
             description: "Leveraging AI to automate processes and improve efficiency.",
             bg: "bg-indigo-50 dark:bg-indigo-100" // Light indigo for light mode, lighter indigo for dark mode
         },
         {
-            icon: "📝",
+            icon: "/src/assets/content.png", // Replace with your icon or image
             title: "Content Creation",
             description: "Producing compelling content that resonates with your target audience.",
             bg: "bg-red-50 dark:bg-red-100" // Light red for light mode, lighter red for dark mode
         },
         {
-            icon: "📈",
+            icon: "/src/assets/", // Replace with your icon or image
             title: "Digital Marketing",
             description: "Driving growth through data-driven digital marketing strategies.",
             bg: "bg-teal-50 dark:bg-teal-100" // Light teal for light mode, lighter teal for dark mode
         },
         {
-            icon: "💡",
+            icon: "/src/assets/it.jpg", // Replace with your icon or image
             title: "IT Consultation",
             description: "Providing expert IT consultation to optimize your business operations.",
             bg: "bg-gray-50 dark:bg-gray-100" // Light gray for light mode, lighter gray for dark mode

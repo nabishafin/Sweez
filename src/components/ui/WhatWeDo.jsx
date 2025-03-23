@@ -44,7 +44,7 @@ const WhatWeDo = () => {
                             <p className='mb-2 text-gray-600 dark:text-gray-300'>Mission : freewebpad...This is what we are and this is what we do. We provide web solution Elements...</p>
                             <p className='text-gray-600 dark:text-gray-300'>Vision : freewebpad...This is what we are and this is what we do. We provide web solution Elements...</p>
                         </div>
-                        <div className='mt-2'>
+                        <div className='mt-4'>
                             <Button text={'Learn More'} />
                         </div>
                     </motion.div>
