@@ -3,24 +3,22 @@ import { motion } from "framer-motion";
 
 // Import the partner image and background image
 import partnerImage from '../../assets/partner.jpg';
-import backgroundImage from '../../assets/bg-bluesade.avif'; // Import the background image
+import backgroundImage from '../../assets/bg-background.jpg'; // Import the background image
 import Button from "../shared/Button";
 
 function PartnerSection() {
     return (
         <section
-            className="partner-section py-16 bg-gradient-to-r from-white via-[#a9ccef] to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 relative"
+            className="partner-section py-16   dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 relative"
             style={{
-                backgroundImage: `url(${backgroundImage})`, // Set the background image
+                backgroundImage: `url(${backgroundImage})`, // Ensure backgroundImage is applied correctly
                 backgroundSize: 'cover', // Ensure the image covers the entire section
                 backgroundPosition: 'center', // Center the background image
                 backgroundRepeat: 'no-repeat', // Prevent the image from repeating
-                // Apply conditional background image for light mode only, in dark mode it will be removed
-                backgroundImage: 'url(${backgroundImage})', // Default for light mode
             }}
         >
             {/* Dark mode overlay to hide the background image in dark mode */}
-            <div className="absolute inset-0 bg-white dark:bg-gray-800 opacity-20 dark:opacity-90"></div>
+            <div className="absolute inset-0  dark:bg-gray-800 opacity-20 dark:opacity-90"></div>
 
             <div className="container mx-auto px-4 relative z-10">
                 <div className="flex flex-col md:flex-row items-center">
@@ -35,7 +33,7 @@ function PartnerSection() {
                             Want to Join Us as a Partner?
                         </motion.h2>
                         <motion.p
-                            className="text-lg mb-8 text-gray-700 dark:text-gray-300"
+                            className="text-lg mb-8 text-white dark:text-gray-300"
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}

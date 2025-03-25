@@ -14,6 +14,7 @@ import {
 
 import BackgroundImage from "../../assets/bg-bluesade.avif";
 import { FaArrowRight } from "react-icons/fa6";
+import rightpic from "../../assets/team.jpeg"
 
 const Banner = () => {
     const icons = [
@@ -110,7 +111,7 @@ const Banner = () => {
                     transition={{ duration: 1, delay: 0.5 }}
                 >
                     <motion.img
-                        src="/src/assets/team.jpeg"
+                        src={rightpic}
                         alt="Side Image"
                         className="w-full max-w-2xl rounded-lg shadow-lg dark:shadow-gray-800/50"
                         initial={{ y: -100, opacity: 0, scale: 0.9 }}
